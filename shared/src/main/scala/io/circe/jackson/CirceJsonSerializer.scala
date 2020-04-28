@@ -1,8 +1,8 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import com.fasterxml.jackson.core.JsonGenerator
 import com.fasterxml.jackson.databind.{ JsonSerializer, SerializerProvider }
-import io.circe.{ Json, JsonBigDecimal, JsonBiggerDecimal, JsonDecimal, JsonDouble, JsonFloat, JsonLong }
+import io.circe013.{ Json, JsonBigDecimal, JsonBiggerDecimal, JsonDecimal, JsonDouble, JsonFloat, JsonLong }
 
 private[jackson] final object CirceJsonSerializer extends JsonSerializer[Json] {
   import java.math.{ BigDecimal => JBigDecimal, BigInteger }

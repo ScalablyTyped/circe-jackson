@@ -1,10 +1,10 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import cats.data.Validated
 import com.fasterxml.jackson.core.JsonToken
 import com.fasterxml.jackson.databind.{ ObjectMapper, ObjectReader }
-import io.circe.Json
-import io.circe.testing.ParserTests
+import io.circe013.Json
+import io.circe013.testing.ParserTests
 import java.io.{ ByteArrayInputStream, File }
 
 import scala.io.Source

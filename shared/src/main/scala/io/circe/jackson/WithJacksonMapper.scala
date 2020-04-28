@@ -1,4 +1,4 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import com.fasterxml.jackson.core.{ JsonFactory, JsonParser }
 import com.fasterxml.jackson.databind.ObjectMapper

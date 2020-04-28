@@ -1,4 +1,4 @@
-organization in ThisBuild := "io.circe"
+organization in ThisBuild := "io.circe013"
 
 val compilerOptions = Seq(
   "-deprecation",
@@ -48,9 +48,9 @@ val baseSettings = Seq(
   coverageHighlighting := true,
   (scalastyleSources in Compile) ++= (unmanagedSourceDirectories in Compile).value,
   libraryDependencies ++= Seq(
-    "io.circe" %% "circe-core" % circeVersion,
-    "io.circe" %% "circe-jawn" % circeVersion % Test,
-    "io.circe" %% "circe-testing" % circeVersion % Test,
+    "io.circe013" %% "circe-core" % circeVersion,
+    "io.circe013" %% "circe-jawn" % circeVersion % Test,
+    "io.circe013" %% "circe-testing" % circeVersion % Test,
     "org.scalatest" %% "scalatest" % "3.1.0" % Test,
     "org.scalatestplus" %% "scalacheck-1-14" % "3.1.0.1" % Test,
     "org.typelevel" %% "discipline-scalatest" % "1.0.0" % Test
@@ -83,7 +83,7 @@ lazy val jackson25 = project
   .settings(
     moduleName := "circe-jackson25",
     libraryDependencies ++= jacksonDependencies("2.5.5"),
-    mimaPreviousArtifacts := Set("io.circe" %% "circe-jackson25" % previousCirceJacksonVersion)
+    mimaPreviousArtifacts := Set("io.circe013" %% "circe-jackson25" % previousCirceJacksonVersion)
   )
 
 lazy val jackson26 = project
@@ -93,7 +93,7 @@ lazy val jackson26 = project
     moduleName := "circe-jackson26",
     libraryDependencies ++= jacksonDependencies("2.6.7", Some("2.6.7.3")),
     unmanagedSourceDirectories in Compile += (baseDirectory in ThisBuild).value / "27",
-    mimaPreviousArtifacts := Set("io.circe" %% "circe-jackson26" % previousCirceJacksonVersion)
+    mimaPreviousArtifacts := Set("io.circe013" %% "circe-jackson26" % previousCirceJacksonVersion)
   )
 
 lazy val jackson27 = project
@@ -102,7 +102,7 @@ lazy val jackson27 = project
   .settings(
     moduleName := "circe-jackson27",
     libraryDependencies ++= jacksonDependencies("2.7.9", Some("2.7.9.6")),
-    mimaPreviousArtifacts := Set("io.circe" %% "circe-jackson27" % previousCirceJacksonVersion)
+    mimaPreviousArtifacts := Set("io.circe013" %% "circe-jackson27" % previousCirceJacksonVersion)
   )
 
 lazy val jackson28 = project
@@ -126,7 +126,7 @@ lazy val jackson28 = project
     git.remoteRepo := "git@github.com:circe/circe-jackson.git",
     autoAPIMappings := true,
     apiURL := Some(url("https://circe.github.io/circe-jackson/api/")),
-    mimaPreviousArtifacts := Set("io.circe" %% "circe-jackson28" % previousCirceJacksonVersion)
+    mimaPreviousArtifacts := Set("io.circe013" %% "circe-jackson28" % previousCirceJacksonVersion)
   )
 
 lazy val jackson29 = project
@@ -136,7 +136,7 @@ lazy val jackson29 = project
     moduleName := "circe-jackson29",
     libraryDependencies ++= jacksonDependencies("2.9.10", Some("2.9.10.2")),
     unmanagedSourceDirectories in Compile += (baseDirectory in ThisBuild).value / "28",
-    mimaPreviousArtifacts := Set("io.circe" %% "circe-jackson29" % previousCirceJacksonVersion)
+    mimaPreviousArtifacts := Set("io.circe013" %% "circe-jackson29" % previousCirceJacksonVersion)
   )
 
 lazy val jackson210 = project
@@ -155,10 +155,10 @@ lazy val benchmark = project
   .settings(
     crossScalaVersions := crossScalaVersions.value.init,
     libraryDependencies ++= Seq(
-      "io.circe" %% "circe-core" % circeVersion,
-      "io.circe" %% "circe-generic" % circeVersion,
-      "io.circe" %% "circe-jawn" % circeVersion,
-      "io.circe" %% "circe-parser" % circeVersion % Test
+      "io.circe013" %% "circe-core" % circeVersion,
+      "io.circe013" %% "circe-generic" % circeVersion,
+      "io.circe013" %% "circe-jawn" % circeVersion,
+      "io.circe013" %% "circe-parser" % circeVersion % Test
     )
   )
   .enablePlugins(JmhPlugin)
@@ -171,21 +171,15 @@ lazy val noPublishSettings = Seq(
 )
 
 lazy val publishSettings = Seq(
+  bintrayRepository := "converter",
   releaseCrossBuild := true,
   releasePublishArtifactsAction := PgpKeys.publishSigned.value,
   releaseVcsSign := true,
   homepage := Some(url("https://github.com/circe/circe-jackson")),
-  licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
+  licenses := Seq("Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
   publishMavenStyle := true,
   publishArtifact in Test := false,
   pomIncludeRepository := { _ => false },
-  publishTo := {
-    val nexus = "https://oss.sonatype.org/"
-    if (isSnapshot.value)
-      Some("snapshots".at(nexus + "content/repositories/snapshots"))
-    else
-      Some("releases".at(nexus + "service/local/staging/deploy/maven2"))
-  },
   scmInfo := Some(
     ScmInfo(
       url("https://github.com/circe/circe-jackson"),

@@ -3,12 +3,12 @@
 [![Build status](https://img.shields.io/travis/circe/circe-jackson/master.svg)](https://travis-ci.org/circe/circe-jackson)
 [![Coverage status](https://img.shields.io/codecov/c/github/circe/circe-jackson/master.svg)](https://codecov.io/github/circe/circe-jackson)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-green.svg)](https://gitter.im/circe/circe)
-[![Maven Central](https://img.shields.io/maven-central/v/io.circe/circe-jackson28_2.13.svg)](https://maven-badges.herokuapp.com/maven-central/io.circe/circe-jackson28_2.13)
+[![Maven Central](https://img.shields.io/maven-central/v/io.circe013/circe-jackson28_2.13.svg)](https://maven-badges.herokuapp.com/maven-central/io.circe013/circe-jackson28_2.13)
 
 This project provides support for using [Jackson][jackson] for JSON parsing and printing with
 [circe][circe], a Scala library for encoding and decoding JSON to Scala types.
 
-Several versions of Jackson are still in widespread use, and `io.circe.jackson` is cross-published
+Several versions of Jackson are still in widespread use, and `io.circe013.jackson` is cross-published
 with support for Jackson 2.5, 2.6, 2.7, and 2.8. Each module has a two-digit suffix indicating its
 Jackson version (`circe-jackson28` supports Jackson 2.8, etc.).
 
@@ -51,7 +51,7 @@ PrintingBenchmark.printIntsCJ  thrpt  100  56459.382 ± 182.105  ops/s
 
 If your project needs JSON printing to be as fast as possible, it may be worth evaluating
 circe-jackson in your own benchmarks (especially since it's essentially a drop-in replacement—simply
-add the appropriate version to your build, import `io.circe.jackson.syntax._`, and call
+add the appropriate version to your build, import `io.circe013.jackson.syntax._`, and call
 `doc.jacksonPrint` on your `Json` values instead of e.g. `doc.noSpaces`).
 
 ## Contributors and participation

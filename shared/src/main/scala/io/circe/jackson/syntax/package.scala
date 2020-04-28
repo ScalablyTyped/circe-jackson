@@ -1,12 +1,12 @@
-package io.circe.jackson
+package io.circe013.jackson
 
-import io.circe.Json
+import io.circe013.Json
 
 /**
  * This package provides syntax for Jackson printing via enrichment classes.
  */
 package object syntax {
   implicit final class JacksonPrintingOps[A](val json: Json) extends AnyVal {
-    final def jacksonPrint: String = io.circe.jackson.jacksonPrint(json)
+    final def jacksonPrint: String = io.circe013.jackson.jacksonPrint(json)
   }
 }

@@ -1,12 +1,12 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import cats.Eq
 import cats.instances.list._
 import cats.instances.map._
-import io.circe.{ Json, JsonBigDecimal, JsonBiggerDecimal, JsonDecimal, JsonDouble, JsonFloat, JsonLong, JsonNumber }
-import io.circe.Json.{ JArray, JNumber, JObject, JString }
-import io.circe.numbers.BiggerDecimal
-import io.circe.testing.ArbitraryInstances
+import io.circe013.{ Json, JsonBigDecimal, JsonBiggerDecimal, JsonDecimal, JsonDouble, JsonFloat, JsonLong, JsonNumber }
+import io.circe013.Json.{ JArray, JNumber, JObject, JString }
+import io.circe013.numbers.BiggerDecimal
+import io.circe013.testing.ArbitraryInstances
 import org.scalacheck.Arbitrary
 import scala.util.matching.Regex
 import scala.util.Try

@@ -1,7 +1,7 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import cats.data.ValidatedNel
-import io.circe.{ Decoder, Error, Json, Parser, ParsingFailure }
+import io.circe013.{ Decoder, Error, Json, Parser, ParsingFailure }
 import java.io.File
 import scala.util.control.NonFatal
 

@@ -1,9 +1,9 @@
-package io.circe.jackson.benchmark
+package io.circe013.jackson.benchmark
 
 import cats.Eq
-import io.circe.{ Decoder, Encoder, Json => JsonC }
-import io.circe.generic.semiauto._
-import io.circe.jawn._
+import io.circe013.{ Decoder, Encoder, Json => JsonC }
+import io.circe013.generic.semiauto._
+import io.circe013.jawn._
 import java.nio.ByteBuffer
 import java.util.concurrent.TimeUnit
 import org.openjdk.jmh.annotations._
@@ -39,7 +39,7 @@ class ExampleData {
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.jackson.benchmark.ParsingBenchmark"
+ * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.jackson.benchmark.ParsingBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))
@@ -49,13 +49,13 @@ class ParsingBenchmark extends ExampleData {
   def parseIntsC: JsonC = parse(intsJson).right.getOrElse(throw new Exception)
 
   @Benchmark
-  def parseIntsCJ: JsonC = io.circe.jackson.parse(intsJson).right.getOrElse(throw new Exception)
+  def parseIntsCJ: JsonC = io.circe013.jackson.parse(intsJson).right.getOrElse(throw new Exception)
 
   @Benchmark
   def parseFoosC: JsonC = parse(foosJson).right.getOrElse(throw new Exception)
 
   @Benchmark
-  def parseFoosCJ: JsonC = io.circe.jackson.parse(foosJson).right.getOrElse(throw new Exception)
+  def parseFoosCJ: JsonC = io.circe013.jackson.parse(foosJson).right.getOrElse(throw new Exception)
 }
 
 /**
@@ -63,7 +63,7 @@ class ParsingBenchmark extends ExampleData {
  *
  * The following command will run the benchmarks with reasonable settings:
  *
- * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe.jackson.benchmark.PrintingBenchmark"
+ * > sbt "benchmark/jmh:run -i 10 -wi 10 -f 2 -t 1 io.circe013.jackson.benchmark.PrintingBenchmark"
  */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.Throughput))
@@ -73,17 +73,17 @@ class PrintingBenchmark extends ExampleData {
   def printIntsC: String = intsC.noSpaces
 
   @Benchmark
-  def printIntsCJString: String = io.circe.jackson.jacksonPrint(intsC)
+  def printIntsCJString: String = io.circe013.jackson.jacksonPrint(intsC)
 
   @Benchmark
-  def printIntsCJBytes: ByteBuffer = io.circe.jackson.jacksonPrintByteBuffer(intsC)
+  def printIntsCJBytes: ByteBuffer = io.circe013.jackson.jacksonPrintByteBuffer(intsC)
 
   @Benchmark
   def printFoosC: String = foosC.noSpaces
 
   @Benchmark
-  def printFoosCJString: String = io.circe.jackson.jacksonPrint(foosC)
+  def printFoosCJString: String = io.circe013.jackson.jacksonPrint(foosC)
 
   @Benchmark
-  def printFoosCJBytes: ByteBuffer = io.circe.jackson.jacksonPrintByteBuffer(foosC)
+  def printFoosCJBytes: ByteBuffer = io.circe013.jackson.jacksonPrintByteBuffer(foosC)
 }

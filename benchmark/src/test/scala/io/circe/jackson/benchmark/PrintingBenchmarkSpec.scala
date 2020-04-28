@@ -1,6 +1,6 @@
-package io.circe.jackson.benchmark
+package io.circe013.jackson.benchmark
 
-import io.circe.parser.decode
+import io.circe013.parser.decode
 import java.nio.ByteBuffer
 import org.scalatest.flatspec.AnyFlatSpec
 

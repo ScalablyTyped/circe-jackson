@@ -1,4 +1,4 @@
-package io.circe
+package io.circe013
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node._

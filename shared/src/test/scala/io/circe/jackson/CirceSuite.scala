@@ -1,9 +1,9 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import cats.instances.AllInstances
 import cats.syntax.{ AllSyntax, EitherOps }
-import io.circe.Json
-import io.circe.testing.{ ArbitraryInstances, EqInstances }
+import io.circe013.Json
+import io.circe013.testing.{ ArbitraryInstances, EqInstances }
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatestplus.scalacheck.ScalaCheckDrivenPropertyChecks
 import org.typelevel.discipline.scalatest.FlatSpecDiscipline

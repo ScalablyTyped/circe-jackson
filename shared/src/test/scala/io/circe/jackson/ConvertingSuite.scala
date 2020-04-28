@@ -1,4 +1,4 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import org.scalatest.matchers.should.Matchers
 

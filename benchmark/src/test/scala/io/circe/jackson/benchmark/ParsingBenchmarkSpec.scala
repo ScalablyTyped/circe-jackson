@@ -1,4 +1,4 @@
-package io.circe.jackson.benchmark
+package io.circe013.jackson.benchmark
 
 import org.scalatest.flatspec.AnyFlatSpec
 

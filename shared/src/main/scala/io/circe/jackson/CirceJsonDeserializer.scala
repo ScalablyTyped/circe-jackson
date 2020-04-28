@@ -1,9 +1,9 @@
-package io.circe.jackson
+package io.circe013.jackson
 
 import com.fasterxml.jackson.core.{ JsonParser, JsonTokenId }
 import com.fasterxml.jackson.databind.{ DeserializationContext, JsonDeserializer }
 import com.fasterxml.jackson.databind.`type`.TypeFactory
-import io.circe.{ Json, JsonBigDecimal }
+import io.circe013.{ Json, JsonBigDecimal }
 import java.util.ArrayList
 import scala.annotation.{ switch, tailrec }
 import scala.collection.JavaConverters._
